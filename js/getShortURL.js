@@ -20,7 +20,7 @@ import {tokenRetrive, appendURL} from './utility.js';
   
     if (response.status == 401) {
       localStorage.removeItem("token");
-      window.location.href = "../index.html";
+      window.location.href = "./index.html";
       return null;
     }
   
