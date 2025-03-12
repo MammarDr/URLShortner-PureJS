@@ -466,7 +466,7 @@ main {
 .fetch-links {
 	display: flex;
 	flex-direction: row;
-	margin-top: 25px;
+	margin-top: 10px;
 	isolation: isolate;
 	background-color: whitesmoke;
 	padding: 1rem;
@@ -474,6 +474,10 @@ main {
 	font-family: "Roboto";
 	font-size: 14px;
 	gap: 10px;
+}
+
+.fetch-links:nth-child(1) {
+    margin-top: 30px;
 }
 
 .fetch-links>span {
@@ -937,8 +941,14 @@ span.copy div::before {
 
 	}
 
+	
+
 	.fetch-links {
-		margin-top: 21px;
+		margin-top: 10px;
+	}
+
+	.fetch-links:nth-child(1) {
+	    margin-top: 21px;
 	}
 
 	.fetch-links>span {
