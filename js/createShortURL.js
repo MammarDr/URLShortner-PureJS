@@ -51,7 +51,7 @@ import {tokenRetrive, alertUser, isValidURL, appendURL} from './utility.js';
 
     if (response.status == 401) {
       localStorage.removeItem("token");
-      window.location.href = "../index.html";
+      window.location.href = "./index.html";
     }
 
     if (response.status == 500) {
