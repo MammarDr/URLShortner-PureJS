@@ -52,7 +52,7 @@ import {alertUser} from './utility.js';
 
       setTimeout( () => {
         window.location.hash = "";
-        window.location.href = window.location.href = `./URLShortner-PureJS/index.html`;
+        window.location.href = window.location.href = `./index.html`;
       }, 3000);
 
       return
