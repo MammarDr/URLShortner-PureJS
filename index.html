@@ -1,0 +1,528 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <title>ShortLinker</title>
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/new-user.css" />
+    <link rel="stylesheet" href="./css/notification.css" />
+</head>
+
+<body>
+    <header>
+        <div class="container flex">
+            <a href="#" class="flex">
+                <img width="50px" height="40px" src="./img/logo.png" alt="" />
+                <h1>ShortLinker</h1>
+            </a>
+
+            <div class="new-user flex fade_in hide">
+                <button class="button white-button">Login</button>
+                <button class="button black-button">Signup</button>
+            </div>
+
+            <div class="current-user hide">
+                <div class="profile-image fade_in" style="
+              cursor: pointer;
+              border: 1px solid rgba(0, 0, 0, 0.393);
+              border-radius: 99px;
+            ">
+                    <img width="40" height="40" src="./img/profile.png" alt="pfp" style="pointer-events: none" />
+                </div>
+
+                <div class="profile-settings abs flex hide">
+                    <div class="card">
+                        <ul>
+                            <li>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                                        />
+                                    </svg>
+                                    About me
+                                </button>
+                            </li>
+                            <li>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                        <path fill="#000000" d="M17.2929 14.2929C16.9024 14.6834 16.9024 15.3166 17.2929 15.7071C17.6834 16.0976 18.3166 16.0976 18.7071 15.7071L21.6201 12.7941C21.6351 12.7791 21.6497 12.7637 21.6637 12.748C21.87 12.5648 22 12.2976 22 12C22 11.7024 21.87 11.4352 21.6637 11.252C21.6497 11.2363 21.6351 11.2209 21.6201 11.2059L18.7071 8.29289C18.3166 7.90237 17.6834 7.90237 17.2929 8.29289C16.9024 8.68342 16.9024 9.31658 17.2929 9.70711L18.5858 11H13C12.4477 11 12 11.4477 12 12C12 12.5523 12.4477 13 13 13H18.5858L17.2929 14.2929Z"></path>
+                                        <path fill="#000" d="M5 2C3.34315 2 2 3.34315 2 5V19C2 20.6569 3.34315 22 5 22H14.5C15.8807 22 17 20.8807 17 19.5V16.7326C16.8519 16.647 16.7125 16.5409 16.5858 16.4142C15.9314 15.7598 15.8253 14.7649 16.2674 14H13C11.8954 14 11 13.1046 11 12C11 10.8954 11.8954 10 13 10H16.2674C15.8253 9.23514 15.9314 8.24015 16.5858 7.58579C16.7125 7.4591 16.8519 7.35296 17 7.26738V4.5C17 3.11929 15.8807 2 14.5 2H5Z"></path>
+                                    </svg>
+                                    Logout
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="wrapper flex">
+            <div class="fade_in">
+                <h1 class="fancy">Create Shorts</h1>
+                <h1 class="fancy">Link</h1>
+            </div>
+
+            <div id="form-container">
+                <img class="fade_in_img" style="top: -148px; right: -35px;" src="./img/arrow-right.png" alt="" />
+                <img class="fade_in_img" style="top: -148px; left: -35px; " src="./img/arrow-left.png" alt="" />
+                <form id="shorten-form" method="post" class="disable">
+                    <input type="text" name="url" placeholder="Shorten any link..." autocomplete="off" spellcheck="false" required />
+                    <button type="submit" id="Shorten">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-down h-4 w-4 transition-transform duration-100 group-active:translate-y-px">
+                            <path d="M12 5v14"></path>
+                            <path d="m19 12-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                </form>
+                <div class="links-container">
+                    <div class="set" data-size="0">
+
+                        <div id="0" style="z-index: -1;" class="fetch-links pulsating-element">
+                            <span>
+                      <img src="./img/logo.png" alt="" />
+                    </span>
+                            <div>
+                                <div id="url-shorten">
+                                    <a href="https://github.com/MammarDr">link.short/trial</a>
+                                    <span class="copy" style="position: relative">
+                          <div class="abs fade-in-bck hide">Copied!</div>
+                          <svg
+                            fill="none"
+                            shape-rendering="geometricPrecision"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                            width="14"
+                            height="14"
+                            class="h-3.5 w-3.5"
+                          >
+                            <path
+                              d="M8 17.929H6c-1.105 0-2-.912-2-2.036V5.036C4 3.91 4.895 3 6 3h8c1.105 0 2 .911 2 2.036v1.866m-6 .17h8c1.105 0 2 .91 2 2.035v10.857C20 21.09 19.105 22 18 22h-8c-1.105 0-2-.911-2-2.036V9.107c0-1.124.895-2.036 2-2.036z"
+                            ></path>
+                          </svg>
+                        </span>
+                                    <span class="qr">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="15"
+                            height="15"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          >
+                            <rect width="5" height="5" x="3" y="3" rx="1"></rect>
+                            <rect width="5" height="5" x="16" y="3" rx="1"></rect>
+                            <rect width="5" height="5" x="3" y="16" rx="1"></rect>
+                            <path d="M21 16h-3a2 2 0 0 0-2 2v3"></path>
+                            <path d="M21 21v.01"></path>
+                            <path d="M12 7v3a2 2 0 0 1-2 2H7"></path>
+                            <path d="M3 12h.01"></path>
+                            <path d="M12 3h.01"></path>
+                            <path d="M12 16v.01"></path>
+                            <path d="M16 12h1"></path>
+                            <path d="M21 12v.01"></path>
+                            <path d="M12 21v-1"></path>
+                          </svg>
+                        </span>
+        
+                                    <div class="url-original abs flex">
+                                        <svg width="16" height="16" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0 text-gray-400">
+                                            <g fill="currentColor">
+                                                <path d="M15.25,9.75H4.75c-1.105,0-2-.895-2-2V3.75" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                                <polyline fill="none" points="11 5.5 15.25 9.75 11 14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></polyline>
+                                            </g>
+                                        </svg>
+                                        <a href="https://github.com/MammarDr">github.com/MammarDr</a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div id="url-clicks">
+                                        <svg height="16" width="16" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                            <g fill="currentColor">
+                                                <path d="M8.095,7.778l7.314,2.51c.222,.076,.226,.388,.007,.47l-3.279,1.233c-.067,.025-.121,.079-.146,.146l-1.233,3.279c-.083,.219-.394,.215-.47-.007l-2.51-7.314c-.068-.197,.121-.385,.318-.318Z" fill="none" stroke="currentColor" stroke-linecap="round"
+                                                stroke-linejoin="round" stroke-width="1.5"></path>
+                                                <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" x1="12.031" x2="16.243" y1="12.031" y2="16.243"></line>
+                                                <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" x1="7.75" x2="7.75" y1="1.75" y2="3.75"></line>
+                                                <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" x1="11.993" x2="10.578" y1="3.507" y2="4.922"></line>
+                                                <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" x1="3.507" x2="4.922" y1="11.993" y2="10.578"></line>
+                                                <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" x1="1.75" x2="3.75" y1="7.75" y2="7.75"></line>
+                                                <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" x1="3.507" x2="4.922" y1="3.507" y2="4.922"></line>
+                                            </g>
+                                        </svg>
+                                        <span>62K</span><span>Views</span>
+                                    </div>
+        
+                                    <div id="url-option">
+                                        <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="20" height="20" class="h-5 w-5 text-gray-500">
+                                            <circle cx="12" cy="12" r="1"></circle>
+                                            <circle cx="12" cy="5" r="1"></circle>
+                                            <circle cx="12" cy="19" r="1"></circle>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+      
+
+            </div>
+        </div>
+    </main>
+
+    <section id="url-update" class="hide fade-in-bck-fst">
+        <div class="info-wrapper" id="0">
+            <div class="info-container flex">
+                <div class="url-logo">
+                    <img width="70" height="60" src="./img/logo.png" alt="" />
+                </div>
+                <div class="url-info">
+                    <div id="url-spec">
+                        <div class="edit">
+                            <a href="https://github.com/MammarDr" onclick="event.preventDefault()">link.short/trial</a>
+                        </div>
+                        <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 48 48"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  fill="var(--color-grey-800)"
+                >
+                  <g>
+                    <g>
+                      <path
+                        d="M38 38H10V10h10V6H10c-2.22 0-4 1.8-4 4v28c0 2.2 1.78 4 4 4h28c2.2 0 4-1.8 4-4V28h-4v10zM28 6v4h7.18L15.52 29.66l2.82 2.82L38 12.82V20h4V6H28z"
+                      ></path>
+                    </g>
+                  </g>
+                </svg>
+              </span>
+                        <span class="copy" style="position: relative">
+                <div class="abs fade-in-bck hide">Copied!</div>
+                <svg
+                  fill="none"
+                  shape-rendering="geometricPrecision"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="20"
+                  height="20"
+                  class="h-3.5 w-3.5"
+                >
+                  <path
+                    d="M8 17.929H6c-1.105 0-2-.912-2-2.036V5.036C4 3.91 4.895 3 6 3h8c1.105 0 2 .911 2 2.036v1.866m-6 .17h8c1.105 0 2 .91 2 2.035v10.857C20 21.09 19.105 22 18 22h-8c-1.105 0-2-.911-2-2.036V9.107c0-1.124.895-2.036 2-2.036z"
+                  ></path>
+                </svg>
+              </span>
+                        <span class="qr">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect width="5" height="5" x="3" y="3" rx="1"></rect>
+                  <rect width="5" height="5" x="16" y="3" rx="1"></rect>
+                  <rect width="5" height="5" x="3" y="16" rx="1"></rect>
+                  <path d="M21 16h-3a2 2 0 0 0-2 2v3"></path>
+                  <path d="M21 21v.01"></path>
+                  <path d="M12 7v3a2 2 0 0 1-2 2H7"></path>
+                  <path d="M3 12h.01"></path>
+                  <path d="M12 3h.01"></path>
+                  <path d="M12 16v.01"></path>
+                  <path d="M16 12h1"></path>
+                  <path d="M21 12v.01"></path>
+                  <path d="M12 21v-1"></path>
+                </svg>
+              </span>
+                        <span class="delete">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 48 48"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <g>
+                    <g>
+                      <path
+                        d="M10 10h9l1-2h8l1 2h9v4H10v-4zm4 6h20v21.44c0 .9-.1 1.2-.27 1.54-.17.32-.43.58-.75.75-.33.18-.65.27-1.54.27H16.56c-.9 0-1.2-.1-1.54-.27-.32-.17-.58-.43-.75-.75-.18-.33-.27-.65-.27-1.54V16z"
+                      ></path>
+                    </g>
+                  </g>
+                </svg>
+              </span>
+                        <div class="url-original abs flex">
+                            <svg width="24" height="24" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0 text-gray-400">
+                                <g fill="currentColor">
+                                    <path d="M15.25,9.75H4.75c-1.105,0-2-.895-2-2V3.75" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                    <polyline fill="none" points="11 5.5 15.25 9.75 11 14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></polyline>
+                                </g>
+                            </svg>
+                            <a href="https://github.com/MammarDr">github.com/MammarDr</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="url-manage">
+                    <div class="wrap">
+                        <div class="clicks">
+                            <svg height="16" width="16" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                <g fill="currentColor">
+                                    <path d="M8.095,7.778l7.314,2.51c.222,.076,.226,.388,.007,.47l-3.279,1.233c-.067,.025-.121,.079-.146,.146l-1.233,3.279c-.083,.219-.394,.215-.47-.007l-2.51-7.314c-.068-.197,.121-.385,.318-.318Z" fill="none" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="1.5"></path>
+                                    <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" x1="12.031" x2="16.243" y1="12.031" y2="16.243"></line>
+                                    <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" x1="7.75" x2="7.75" y1="1.75" y2="3.75"></line>
+                                    <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" x1="11.993" x2="10.578" y1="3.507" y2="4.922"></line>
+                                    <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" x1="3.507" x2="4.922" y1="11.993" y2="10.578"></line>
+                                    <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" x1="1.75" x2="3.75" y1="7.75" y2="7.75"></line>
+                                    <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" x1="3.507" x2="4.922" y1="3.507" y2="4.922"></line>
+                                </g>
+                            </svg>
+                            <span>Clicks : 63K</span>
+                        </div>
+                        <div class="date-modified">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 48 48" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#0000009c">
+                                <g>
+                                    <g>
+                                        <path d="M18 22h-4v4h4v-4zm8 0h-4v4h4v-4zm8 0h-4v4h4v-4zm4-12h-2V6h-4v4H16V6h-4v4h-2c-2.22 0-3.98 1.8-3.98 4L6 38c0 2.2 1.78 4 4 4h28c2.2 0 4-1.8 4-4V14c0-2.2-1.8-4-4-4zm0 28H10V18h28v20z"></path>
+                                    </g>
+                                </g>
+                            </svg>
+                            <div>Date Created &nbsp;:</div>
+                            <span>2025-03-09</span>
+                        </div>
+                        <div class="date-created">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 48 48" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#0000009c">
+                                <g>
+                                    <g>
+                                        <path d="M18 22h-4v4h4v-4zm8 0h-4v4h4v-4zm8 0h-4v4h4v-4zm4-12h-2V6h-4v4H16V6h-4v4h-2c-2.22 0-3.98 1.8-3.98 4L6 38c0 2.2 1.78 4 4 4h28c2.2 0 4-1.8 4-4V14c0-2.2-1.8-4-4-4zm0 28H10V18h28v20z"></path>
+                                    </g>
+                                </g>
+                            </svg>
+                            <div>Last Modified :</div>
+                            <span>2025-03-09</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button>
+                            <svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1024 1024">
+                                <path d="M874.690416 495.52477c0 11.2973-9.168824 20.466124-20.466124 20.466124l-604.773963 0 188.083679 188.083679c7.992021 7.992021 7.992021 20.947078 0 28.939099-4.001127 3.990894-9.240455 5.996574-14.46955 5.996574-5.239328 0-10.478655-1.995447-14.479783-5.996574l-223.00912-223.00912c-3.837398-3.837398-5.996574-9.046027-5.996574-14.46955 0-5.433756 2.159176-10.632151 5.996574-14.46955l223.019353-223.029586c7.992021-7.992021 20.957311-7.992021 28.949332 0 7.992021 8.002254 7.992021 20.957311 0 28.949332l-188.073446 188.073446 604.753497 0C865.521592 475.058646 874.690416 484.217237 874.690416 495.52477z"></path>
+                            </svg>
+                            Back
+                        </button>
+                        <button class="save" data-api-call="false">Save Changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="new-url-wrapper fade-in-bck hide">
+            <div class="new-url">
+                <h1>Insert New URL</h1>
+                <input type="text" name="url" id="" placeholder="Type or pase a link (URL)" />
+                <button disabled>Change Link</button>
+            </div>
+        </div>
+    </section>
+
+    <template id="fetch-links">
+        <span>
+        <img src="./img/logo.png" alt="" />
+      </span>
+        <div>
+            <div id="url-shorten">
+                <a href="https://github.com/MammarDr">link.short/try</a>
+                <span class="copy" style="position: relative">
+            <div class="abs fade-in-bck hide">Copied!</div>
+            <svg
+              fill="none"
+              shape-rendering="geometricPrecision"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="14"
+              height="14"
+              class="h-3.5 w-3.5"
+            >
+              <path
+                d="M8 17.929H6c-1.105 0-2-.912-2-2.036V5.036C4 3.91 4.895 3 6 3h8c1.105 0 2 .911 2 2.036v1.866m-6 .17h8c1.105 0 2 .91 2 2.035v10.857C20 21.09 19.105 22 18 22h-8c-1.105 0-2-.911-2-2.036V9.107c0-1.124.895-2.036 2-2.036z"
+              ></path>
+            </svg>
+          </span>
+                <span class="qr">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect width="5" height="5" x="3" y="3" rx="1"></rect>
+              <rect width="5" height="5" x="16" y="3" rx="1"></rect>
+              <rect width="5" height="5" x="3" y="16" rx="1"></rect>
+              <path d="M21 16h-3a2 2 0 0 0-2 2v3"></path>
+              <path d="M21 21v.01"></path>
+              <path d="M12 7v3a2 2 0 0 1-2 2H7"></path>
+              <path d="M3 12h.01"></path>
+              <path d="M12 3h.01"></path>
+              <path d="M12 16v.01"></path>
+              <path d="M16 12h1"></path>
+              <path d="M21 12v.01"></path>
+              <path d="M12 21v-1"></path>
+            </svg>
+          </span>
+
+                <div class="url-original abs flex">
+                    <svg width="16" height="16" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0 text-gray-400">
+                        <g fill="currentColor">
+                            <path d="M15.25,9.75H4.75c-1.105,0-2-.895-2-2V3.75" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                            <polyline fill="none" points="11 5.5 15.25 9.75 11 14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></polyline>
+                        </g>
+                    </svg>
+                    <a href="https://github.com/MammarDr">github.com/MammarDr</a>
+                </div>
+            </div>
+            <div>
+                <div id="url-clicks">
+                    <svg height="16" width="16" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                        <g fill="currentColor">
+                            <path d="M8.095,7.778l7.314,2.51c.222,.076,.226,.388,.007,.47l-3.279,1.233c-.067,.025-.121,.079-.146,.146l-1.233,3.279c-.083,.219-.394,.215-.47-.007l-2.51-7.314c-.068-.197,.121-.385,.318-.318Z" fill="none" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="1.5"></path>
+                            <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" x1="12.031" x2="16.243" y1="12.031" y2="16.243"></line>
+                            <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" x1="7.75" x2="7.75" y1="1.75" y2="3.75"></line>
+                            <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" x1="11.993" x2="10.578" y1="3.507" y2="4.922"></line>
+                            <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" x1="3.507" x2="4.922" y1="11.993" y2="10.578"></line>
+                            <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" x1="1.75" x2="3.75" y1="7.75" y2="7.75"></line>
+                            <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" x1="3.507" x2="4.922" y1="3.507" y2="4.922"></line>
+                        </g>
+                    </svg>
+                    <span>62K clicks</span>
+                </div>
+
+                <div id="url-option">
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="20" height="20" class="h-5 w-5 text-gray-500">
+                        <circle cx="12" cy="12" r="1"></circle>
+                        <circle cx="12" cy="5" r="1"></circle>
+                        <circle cx="12" cy="19" r="1"></circle>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="user-form" class="hide abs">
+        <form class="modern-form" method="post">
+            <div class="form-title">Sign Up</div>
+
+            <div class="form-body">
+                <div class="input-group">
+                    <div class="input-wrapper">
+                        <svg fill="none" viewBox="0 0 24 24" class="input-icon">
+                            <circle stroke-width="1.5" stroke="currentColor" r="4" cy="8" cx="12"></circle>
+                            <path stroke-linecap="round" stroke-width="1.5" stroke="currentColor" d="M5 20C5 17.2386 8.13401 15 12 15C15.866 15 19 17.2386 19 20"></path>
+                        </svg>
+                        <input placeholder="Username" class="form-input" type="text" name="username" />
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-wrapper">
+                        <svg fill="none" viewBox="0 0 24 24" class="input-icon">
+                            <path stroke-width="1.5" stroke="currentColor" d="M3 8L10.8906 13.2604C11.5624 13.7083 12.4376 13.7083 13.1094 13.2604L21 8M5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V17C3 18.1046 3.89543 19 5 19Z"></path>
+                        </svg>
+                        <input required="" placeholder="Email" class="form-input" type="email" name="email" />
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-wrapper">
+                        <svg fill="none" viewBox="0 0 24 24" class="input-icon">
+                            <path stroke-width="1.5" stroke="currentColor" d="M12 10V14M8 6H16C17.1046 6 18 6.89543 18 8V16C18 17.1046 17.1046 18 16 18H8C6.89543 18 6 17.1046 6 16V8C6 6.89543 6.89543 6 8 6Z"></path>
+                        </svg>
+                        <input required="" placeholder="Password" class="form-input" type="password" name="password" />
+                        <button class="password-toggle" type="button">
+                            <svg fill="none" viewBox="0 0 24 24" class="eye-icon">
+                                <path stroke-width="1.5" stroke="currentColor" d="M2 12C2 12 5 5 12 5C19 5 22 12 22 12C22 12 19 19 12 19C5 19 2 12 2 12Z"></path>
+                                <circle stroke-width="1.5" stroke="currentColor" r="3" cy="12" cx="12"></circle>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <button class="submit-button" type="submit">
+                <span class="button-text"></span>
+                <div class="button-glow"></div>
+            </button>
+
+            <div class="form-footer">
+                <a class="login-link"> </a>
+            </div>
+        </form>
+    </template>
+
+    <div class="toast-item help hide">
+        <div class="toast help">
+            <label for="t-help" class="close"></label>
+            <h3>Advice!</h3>
+            <p></p>
+        </div>
+    </div>
+    <div class="toast-item success hide">
+        <div class="toast success">
+            <label for="t-success" class="close"></label>
+            <h3>Success!</h3>
+            <p></p>
+        </div>
+    </div>
+    <div class="toast-item warning hide">
+        <div class="toast warning">
+            <label for="t-warning" class="close"></label>
+            <h3>Warning!</h3>
+            <p></p>
+        </div>
+    </div>
+    <div class="toast-item error hide">
+        <div class="toast error">
+            <label for="t-error" class="close"></label>
+            <h3>Error!</h3>
+            <p></p>
+        </div>
+    </div>
+
+    <script src="./js/utility.js" type="module"></script>
+    <script src="script.js" type="module"></script>
+</body>
+
+</html>

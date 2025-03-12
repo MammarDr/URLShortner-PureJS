@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+:root {
+	--tr: all 0.5s ease 0s;
+	--ch1: #05478a;
+	--ch2: #0070e0;
+	--cs1: #005e38;
+	--cs2: #03a65a;
+	--cw1: #c24914;
+	--cw2: #fc8621;
+	--ce1: #851d41;
+	--ce2: #db3056;
+}
+
+@property --bg-help {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: -10%;
+}
+
+@property --bg-success {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 145%;
+}
+
+@property --bg-warning {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: -55%;
+}
+
+@property --bg-error {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 112%;
+}
+
+@property --bsc {
+	syntax: '<color>';
+	inherits: false;
+	initial-value: red;
+}
+
+
+.toast-item {
+	top: 0;
+	position: absolute;
+	right: 0;
+	transform: translateX(100%);
+	font-family: roboto;
+	z-index: 3;
+}
+
+
+.toast {
+	background: #fff;
+	color: #f5f5f5;
+	padding: 1rem 2rem 1rem 3rem;
+	text-align: center;
+	border-radius: 1rem;
+	position: relative;
+	font-weight: 300;
+	margin: 1rem 0;
+	text-align: left;
+	min-width: 25rem;
+	transition: var(--tr);
+	opacity: 1;
+	border: 0.15rem solid #fff2;
+	box-shadow: 0 0 1.5rem 0 #1a1f4360;
+}
+
+.toast:before {
+	content: "";
+	position: absolute;
+	width: 0.5rem;
+	height: calc(100% - 1.5rem);
+	top: 0.75rem;
+	left: 0.5rem;
+	z-index: 3;
+	border-radius: 1rem;
+	background: var(--clr);
+}
+
+.toast h3 {
+	font-size: 1.2rem;
+	margin: 0;
+	line-height: 1.35rem;
+	font-weight: 600;
+	position: relative;
+	color: var(--clr);
+}
+
+.toast p {
+	position: relative;
+	font-size: 0.95rem;
+	z-index: 3;
+	margin: 0.25rem 0 0;
+	color: #595959;
+	line-height: 1.3rem;
+}
+
+
+.close {
+	position: absolute;
+	width: 1.35rem;
+	height: 1.35rem;
+	text-align: center;
+	right: 1rem;
+	cursor: pointer;
+	border-radius: 100%;
+}
+
+.close:after {
+	position: absolute;
+	font-family: 'Varela Round', san-serif;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	font-size: 1.8rem;
+	content: "+";
+	transform: rotate(-45deg);
+	border-radius: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #595959;
+	text-indent: 1px;
+}
+
+.close:hover:after {
+	background: var(--clr);
+	color: #fff;
+}
+
+
+
+
+
+
+.toast.help {
+	--bg: var(--ch1);
+	--clr: var(--ch2);
+	--brd: var(--ch3);
+}
+.icon-help:after {
+	content: "?";
+}
+
+.toast.success {
+	--bg: var(--cs1);
+	--clr: var(--cs2);
+	--brd: var(--cs3);
+}
+
+.icon-success:after {
+	content: "L";
+	font-size: 1.5rem;
+	font-weight: bold;
+	padding-bottom: 0.35rem;
+	transform: rotateY(180deg) rotate(-38deg);
+	text-indent: 0.1rem;
+}
+
+.toast.warning {
+	--bg: var(--cw1);
+	--clr: var(--cw2);
+	--brd: var(--cw3);
+}
+
+.icon-warning:after {
+	content: "!";
+	font-weight: bold;
+}
+
+.toast.error {
+	--bg: var(--ce1);
+	--clr: var(--ce2);
+	--brd: var(--ce3);
+}
+
+.icon-error:after {
+	content: "+";
+	font-size: 2.85rem;
+	line-height: 1.2rem;
+	transform: rotate(45deg);
+}
+
+
+
+
+
+
+.toast a {
+	color: var(--clr);
+}
+
+.toast a:hover {
+	color: var(--bg);
+}
+
+
+
+@media only screen and (min-width: 1360px) {
+	.toast {
+		padding: 1rem 1rem 1rem 3rem;
+		margin: 1rem 1rem 0 1rem;
+		min-width: 33rem;
+	}
+
+	.new-url {
+		scale: 1.3;
+	}
+
+	.toast h3 {
+		font-size: 1.5rem;
+	}
+
+	.toast p {
+		font-size: 01.25rem;
+		margin: 0.525rem 0 0;
+	}
+}
+
+
+
+@media (max-width: 600px) {
+	.toast {
+		padding: 0.5rem 1rem 0.5rem 1.5rem;
+		min-width: 10rem;
+		width: 15rem;
+	}
+
+	.toast:before {
+		width: 0.35rem;
+	}
+
+	.toast h3 {
+		font-size: 1rem;
+	}
+
+	.toast p {
+		font-size: 0.8695rem;
+	}
+}
