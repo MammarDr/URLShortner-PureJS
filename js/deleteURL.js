@@ -62,7 +62,7 @@ export const deleteURLbyID = async (_id) => {
    
        if (response.status == 401) {
          localStorage.removeItem("token");
-         window.location.href = "../index.html";
+         window.location.href = "./index.html";
        }
    
        if (response.status == 500) {
