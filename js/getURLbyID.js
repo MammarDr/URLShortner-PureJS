@@ -33,7 +33,7 @@ const getURL = async (_id) => {
     localStorage.removeItem("token");
 
     setTimeout(() => {
-      window.location.href = "../index.html";
+      window.location.href = "./index.html";
     }, 1500);
   }
 
