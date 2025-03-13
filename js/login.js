@@ -18,9 +18,6 @@ import {alertUser} from './utility.js';
     const password = loginForm.querySelector(
       '.form-body input[name="password"]'
     ).value;
-
-    console.log(email);
-    console.log(password);
     
     const url =
       "https://www.shorten-url-api.infobrains.club/api/public/auth/login";
@@ -55,7 +52,7 @@ import {alertUser} from './utility.js';
 
       setTimeout( () => {
         window.location.hash = "";
-        window.location.href = "./index.html";
+        window.location.href = "../index.html";
       }, 3000);
 
       return
