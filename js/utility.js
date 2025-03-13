@@ -45,7 +45,7 @@ window.addEventListener('scroll', () => {
 export const alertUser = (type, prompt) => {
 
     let signal = notification[type];
-    signal.style = `top:${window.scrollY}`;
+    signal.style = `top:${window.scrollY}px`;
     signal.classList.remove('hide');
     signal.querySelector('p').innerHTML = prompt;
     signal.classList.add('slide-in-blurred-right');
