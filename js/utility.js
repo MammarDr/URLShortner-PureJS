@@ -238,8 +238,6 @@ const LoadContent = (URLs) => {
     var size = parseInt(currSet.getAttribute('data-size'), 10);
 
     if(size == 5) {
-      console.log(i);
-      console.log(currSet.offsetHeight);
       container.style = `height:${currSet.offsetHeight + 15}px; overflow-x:scroll;`;
       currSet = addSetHTML();
       size = 0;
