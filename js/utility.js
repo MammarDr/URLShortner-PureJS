@@ -55,9 +55,11 @@ export const alertUser = (type, prompt) => {
      signal.dismissTimer = setTimeout(() => {
         signal.classList.remove('slide-in-blurred-right');
         signal.classList.add('hide');
-        signal.style = `top:${0}`;
+        signal.style = `top:${0}px`;
     }, 3000);
 }
+
+
 
 
 // URL Validatior
@@ -227,7 +229,7 @@ const LoadContent = (URLs) => {
   const container = document.querySelector('.links-container');
   const set = container.querySelectorAll('.set');
 
-  let currSet = !set ? addSetHTML() : set[set.length - 1];
+  let currSet = !set ? addSetHTML() : set[0];
 
   for(var i = 0; i < URLs.length; i++) {
 
@@ -236,7 +238,9 @@ const LoadContent = (URLs) => {
     var size = parseInt(currSet.getAttribute('data-size'), 10);
 
     if(size == 5) {
-      container.style = `height:${currSet.offsetHeight + 15}; overflow-x:scroll;`;
+      console.log(i);
+      console.log(currSet.offsetHeight);
+      container.style = `height:${currSet.offsetHeight + 15}px; overflow-x:scroll;`;
       currSet = addSetHTML();
       size = 0;
     }
@@ -263,7 +267,7 @@ const CreateContent = (url, setNumber = 0) => {
 
   removeDefaultEXAMPLE(document.querySelector(".fetch-links"));
   
-    url.style.animationDelay = `${(setNumber) * 0.4}s`;
+    url.style.animationDelay =  '0.4s';
     url.classList.add('fade-up');
 
     currSet.prepend(url);
@@ -274,7 +278,7 @@ const CreateContent = (url, setNumber = 0) => {
       const list = currSet.querySelectorAll('.fetch-links');
       let temp = list[list.length - 1];
       CreateContent(temp, setNumber + 1);
-      container.style = `height:${currSet.offsetHeight + 15}; overflow-x:scroll;`;
+      container.style = `height:${currSet.offsetHeight + 15}px; overflow-x:scroll;`;
       return;
     }
 
@@ -300,8 +304,6 @@ export const appendURL = async (dataList, type) => {
       document.getElementById('shorten-form').classList.remove('disable');
       return;
     }
-
-    await delay(1500);
 
     const status = {
       Load: 1,
@@ -350,60 +352,52 @@ export const removeURL = (_id) => {
 
   // If A Tab Is Left With More Then One URL
   const list = document.querySelectorAll('.set');
+
+  // Find The Index Of Current TAB(SET)
   for (let i = 0; i < list.length; i++) {
     if (list[i] === currSet) {
-      // Find The Index Of Current TAB(SET)
-      reArrange(i);
       target.remove();
+      reArrange(i);
       if(document.querySelectorAll('.set').length == 1)
         container.style.overflowX = 'hidden';
       break;
     }
   }
+
 }
 
 
 // If A URL Is Removed From A Tab 
 // We Get The Most Recent URL From Other Tabs IF EXISTS
-// TAB1 : 5 URLs
-// TAB2 : 2 URLs
-// TAB1.remove(URL); => TAB1 : 4 URLs
-// END RESULT =>
-                  // TAB1 : 5 URLs
-                  // TAB2 : 1 URLs
-// This My Most Proudest Code In This Project So Far
 function reArrange(index) {
-
   const sets = document.querySelectorAll('.set');
+  while(index < sets.length ) {
 
-  // If We Reach The Last TAB(SET)
-  // And Its Not Empty
-  // Reduce Its Size By One In HTML
-  if(index + 1 >= sets.length) {
-    var size = parseInt(sets[index].getAttribute('data-size'), 10);
-    sets[index].setAttribute('data-size', `${size - 1}`);
-    return;
+    // If We Reach The Last TAB(SET)
+    // And Its Not Empty
+    // Reduce Its Size By One In HTML
+    if(index + 1 >= sets.length) {
+      var size = parseInt(sets[index].getAttribute('data-size'), 10);
+      sets[index].setAttribute('data-size', `${size - 1}`);
+      return;
+    }
+
+    // Append The Most Recent URL
+    sets[index].appendChild(sets[index + 1].querySelector('.fetch-links'));
+
+    // If The Tab Becomes Empty After Taking Its Child
+    // We Remove It And Stop The Recursive Call
+    if (sets[index + 1].childElementCount === 0) {
+      sets[index + 1].remove();
+      return;
+    }
+
+    // Go To The Next Tab 
+    // And Repeat The LOGIC
+    index++;    
   }
-
-  // Append The Most Recent URL
-  sets[index].appendChild(sets[index + 1].querySelector('.fetch-links'));
-
-  // If The Tab Becomes Empty After Taking Its Child
-  // We Remove It And Stop The Recursive Call
-  if (sets[index + 1].childElementCount === 0) {
-    sets[index + 1].remove();
-    return;
-  }
-
-  // Go To The Next Tab 
-  // And Repeat The LOGIC
-    // FIRST CALL                    SECOND CALL       THIRD CALL
-    // TAB1 : 5 URLs(one delete)     TAB1 : 5 URLs     TAB1 : 5 URLs
-    // TAB2 : 5 URLs                 TAB2 : 4 URLs     TAB2 : 5 URLs
-    // TAB3 : 2 URLs                 TAB3 : 2 URLs     TAB3 : 1 URLs
-  reArrange(++index);
-
 }
+
 
 // Update URL In HTML
 export const updateURL = (_id, data) => {
