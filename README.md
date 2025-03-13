@@ -12,8 +12,7 @@ A sleek and user-friendly front-end for a URL Shortener, powered by [API Name]. 
 - [API Name] for URL shortening.
 
 
-🚀 **Live Demo**: [[Live Demo]](mammardr.github.io/URLShortner-PureJS/index.html)
-
+🚀 **Live Demo**: [Live Demo](https://mammardr.github.io/URLShortner-PureJS/)
 📂 **How to Use**:
 1. Clone the repository: `git clone https://github.com/MammarDr/URLShortner-PureJS.git`.
 2. Open `index.html` in your browser.
