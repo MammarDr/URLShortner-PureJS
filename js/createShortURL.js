@@ -66,7 +66,6 @@ import {tokenRetrive, alertUser, isValidURL, appendURL} from './utility.js';
 
     if (response.status == 201) {
       alertUser('success', "URL Has Been Shortened");
-      console.log(jsonResponse.data);
       appendURL([jsonResponse.data], 'Create');
     }
   });
