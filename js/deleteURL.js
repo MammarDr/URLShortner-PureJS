@@ -72,8 +72,8 @@ export const deleteURLbyID = async (_id) => {
    
        if (response.status == 200) {
          alertUser('success', "URL Has Been Deleted.");
+         removeURL(_id);
          setTimeout( () => {
-             removeURL(_id);
              document.querySelector('body').style.overflowY = "auto";
              urlSettings['Menu'].classList.add('hide');
              removeAnimationURLform();
