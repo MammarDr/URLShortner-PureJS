@@ -55,7 +55,7 @@ import {alertUser} from './utility.js';
 
       setTimeout( () => {
         window.location.hash = "";
-        window.location.href = "../index.html";
+        window.location.href = "./index.html";
       }, 3000);
 
       return
