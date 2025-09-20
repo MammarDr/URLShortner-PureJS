@@ -1,3 +1,5 @@
+[API NO LONGER WORKS, Building my own URL Shortener API and integrated on this project ]
+
 # URLShortner
 A sleek and user-friendly front-end for a URL Shortener, powered by Dhiya's API. Easily shorten long URLs and share them with a clean, modern interface.
 
